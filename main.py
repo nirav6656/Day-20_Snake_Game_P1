@@ -1,16 +1,37 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from turtle import Turtle, Screen
+import time
+screen = Screen()
+screen.setup(width=500, height=500)
+screen.bgcolor("black")
+screen.title("Python Game")
+screen.tracer(0)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+positions = [(-10,0),(-20,0),(-30,0),(-40,0)]
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+sheru_gang = []
+for position in positions:
+    sheru = Turtle("square")
+    # sheru.speed(0)
+    sheru.penup()
+
+    sheru.color("white")
+    sheru.goto(position)
+    sheru_gang.append(sheru)
+
+game_on = True
+while game_on:
+    screen.update()
+    for new_sheru in sheru_gang:
+        new_sheru.forward(10)
+        time.sleep(1)
+
+
+
+
+
+
+
+screen.exitonclick()
