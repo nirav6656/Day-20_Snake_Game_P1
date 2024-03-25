@@ -14,7 +14,7 @@ positions = [(-10,0),(-20,0),(-30,0),(-40,0)]
 sheru_gang = []
 for position in positions:
     sheru = Turtle("square")
-    # sheru.speed(0)
+    sheru.speed(0)
     sheru.penup()
 
     sheru.color("white")
@@ -24,9 +24,10 @@ for position in positions:
 game_on = True
 while game_on:
     screen.update()
+    time.sleep(0.1)
     for new_sheru in sheru_gang:
         new_sheru.forward(10)
-        time.sleep(1)
+
 
 
 
