@@ -21,17 +21,17 @@ for position in positions:
     sheru.goto(position)
     sheru_gang.append(sheru)
 
+
 game_on = True
 while game_on:
     screen.update()
     time.sleep(0.1)
-    for new_sheru in sheru_gang:
-        new_sheru.forward(10)
 
-
-
-
-
+    for seru_number in range(len(sheru_gang) -1, 0, -1):
+        newx = sheru_gang[seru_number - 1].xcor()
+        newy = sheru_gang[seru_number - 1].ycor()
+        sheru_gang[seru_number].goto(newx, newy)
+    sheru_gang[0].forward(20)
 
 
 
